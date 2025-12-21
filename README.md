@@ -10,6 +10,9 @@ A responsive User Dashboard built using React that fetches users from an API, al
 - Click user to view full details (address & geo-location)
 - Mobile-friendly UI
 
+## API Used
+https://jsonplaceholder.typicode.com/users
+
 ## Tech Stack
 - React (Functional Components & Hooks)
 - React Router DOM
@@ -19,6 +22,33 @@ A responsive User Dashboard built using React that fetches users from an API, al
 ## Pages
 - **Dashboard**: User list, search, create user
 - **User Details**: Full user information with address & geo data
+
+## Folder Structure
+```
+USER_DASHBOARD_ASSIGNMENT/
+├── dist/                    
+├── node_modules/            
+├── public/
+├── src/
+│   ├── components/          
+│   │   ├── CreateUserForm.jsx
+│   │   └── UserCard.jsx
+│   ├── pages/               
+│   │   ├── Dashboard.jsx
+│   │   └── UserCardDetails.jsx
+│   ├── App.jsx             
+│   ├── index.css           
+│   └── main.jsx             
+├── .gitignore               
+├── eslint.config.js         
+├── package-lock.json        
+├── package.json             
+├── postcss.config.js        
+├── README.md                
+├── tailwind.config.js       
+└── vite.config.js           
+
+```
 
 ## Setup Instructions
 ```bash
