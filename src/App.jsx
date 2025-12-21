@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/user_dashboard_assignment">
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/user/:id" element={<UserCardDetails />} />
