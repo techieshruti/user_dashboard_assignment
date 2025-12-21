@@ -3,6 +3,14 @@ import UserCard from "../components/UserCard";
 import { Search } from "lucide-react";
 import CreateUserForm from "../components/CreateUserForm";
 
+const formData=[
+  {id:1, name:"name", type:"text", placeholder: "Enter your name..."},
+  {id:2, name:"email", type:"email", placeholder: "Enter your email..."},
+  {id:3, name:"phone", type:"number", placeholder: "Enter your phone..."},
+  {id:4, name:"comapany", type:"text", placeholder: "Enter your company name..."},
+
+]
+
 const Dashboard = () => {
   const [users, setUsers] = useState([]);
   const [fetching, setFetching] = useState(true);
@@ -72,7 +80,7 @@ const addUser = (newUser) => {
 
       {/* if form opens */}
       {isFormOpen && (
-        <div>
+        <div className="fixed">
           <button
           onClick={()=>setIsFormOpen(false)}
           className=""
