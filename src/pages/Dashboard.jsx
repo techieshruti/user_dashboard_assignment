@@ -31,12 +31,28 @@ const Dashboard = () => {
   if(error) return <p className="text-red-800">x{error}</p>
 
   return (
-    <div className="m-4">
-      <h1 className="font-bold text-xl">User Dashboard</h1>
+    <div className="mx-4 justify-center items-center">
+
+      {/* header */}
+      <div className="flex flex-col sm:justify-between mt-4 gap-4 mb-4 sm:flex-row">
+        <div>
+          {/* Search */}
+          <input 
+          className="bg-gray-100 px-8 py-2 rounded-xl border border-[#cae4ef]"
+          type="text" placeholder="Search by Username..."/>
+        </div>
+
+        {/* craete User */}
+        <button
+        className="bg-[#213448] text-white px-5 py-2 cursor-pointer rounded-xl"
+        >Create User +</button>
+      </div>
+
+
+      <h1 className="font-bold text-2xl py-2 ml-4">User Dashboard</h1>
 
       {/* UserCard */}
-
-      <div>
+      <div className="grid md:grid-cols-4 gap-4 grid-cols-1">
         {users.map((user)=> (
           <UserCard key={user.id} user={user}/>
         ))}

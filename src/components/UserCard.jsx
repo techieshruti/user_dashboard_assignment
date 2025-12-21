@@ -1,12 +1,19 @@
-import React from 'react'
+import { Building2, Mail, Phone } from "lucide-react"
+
+const Info = ({icon:Icon, text}) => (
+  <div className="flex items-center gap-2 py-1 text-sm">
+    <Icon size={16} />
+    <span className="truncate">{text}</span>
+  </div>
+);
 
 const UserCard = ({user}) => {
   return (
-    <div>
-      <h1>{user.name}</h1>
-      <span>{user.email}</span>
-      <span>{user.phone}</span>
-      <span>{user.company.name}</span>
+    <div className='bg-blue-100 rounded-2xl p-5 shadow-md w-[260px] cursor-pointer hover:shadow-lg transition'>
+      <h1 className='text-xl font-bold text-[#213448]'>{user.name}</h1>
+      <Info icon={Mail} text={user.email}/>
+      <Info icon={Phone} text={user.phone}/>
+      <Info icon={Building2} text={user.company.name}/>
     </div>
   )
 }
