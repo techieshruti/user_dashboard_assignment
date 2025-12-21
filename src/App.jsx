@@ -1,16 +1,16 @@
-import Dashboard from './pages/Dashboard'
-import UserCardDetails from './pages/UserCardDetails'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Dashboard from "./pages/Dashboard";
+import UserCardDetails from "./pages/UserCardDetails";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 const App = () => {
   return (
-    <BrowserRouter basename="/user_dashboard_assignment">
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/user/:id" element={<UserCardDetails />} />
       </Routes>
-    </BrowserRouter>
-  )
-}
+    </HashRouter>
+  );
+};
 
-export default App
+export default App;
