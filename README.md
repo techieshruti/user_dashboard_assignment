@@ -2,6 +2,17 @@
 
 A responsive User Dashboard built using React that fetches users from an API, allows searching, creating new users (client-side), and viewing detailed user information with routing.
 
+## Deployed 
+Live link:- (https://techieshruti.github.io/user_dashboard_assignment/)
+
+## 📸 Screenshots
+<img width="235" height="490" alt="UserForm" src="https://github.com/user-attachments/assets/2830dfb2-212e-458f-bdb5-01b3d37a6288" />
+<img width="235" height="490" alt="UserForm" src="https://github.com/user-attachments/assets/bf958f93-78e7-4f34-8e06-75b32de2304c" />
+<img width="1349" height="606" alt="Web_Dashboard" src="https://github.com/user-attachments/assets/ec924dae-39d7-4595-a0bc-aab2394fd188" />
+<img width="1339" height="604" alt="Web_UserForm" src="https://github.com/user-attachments/assets/41fbcc15-777f-4967-9089-c78e5b5bc433" />
+
+
+
 ## Features
 - Fetch users from public API
 - Display users in responsive card layout
