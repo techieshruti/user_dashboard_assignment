@@ -8,7 +8,7 @@ const formData=[
   {id:1, name:"name", type:"text", placeholder: "Enter your name..."},
   {id:2, name:"email", type:"email", placeholder: "Enter your email..."},
   {id:3, name:"phone", type:"number", placeholder: "Enter your phone..."},
-  {id:4, name:"comapany", type:"text", placeholder: "Enter your company name..."},
+  {id:4, name:"company", type:"text", placeholder: "Enter your company name..."},
 
 ]
 

@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+
 
 const UserCardDetails = () => {
-  const { id } = useParams();           // ✅ FIX 1
+  const { id } = useParams();
   const navigate = useNavigate();
 
   const [user, setUser] = useState(null);
@@ -10,26 +11,18 @@ const UserCardDetails = () => {
 
   useEffect(() => {
     const fetchUser = async () => {
-      try {
-        const res = await fetch(
-          `https://jsonplaceholder.typicode.com/users/${id}`
-        );
-
-        const data = await res.json();
-        setUser(data);
-      } catch (error) {
-        console.error("Failed to fetch user:", error);
-      } finally {
-        setLoading(false);
-      }
+      const res = await fetch(
+        `https://jsonplaceholder.typicode.com/users/${id}`
+      );
+      const data = await res.json();
+      setUser(data);
+      setLoading(false);
     };
 
     fetchUser();
   }, [id]);
 
   if (loading) return <p className="text-center mt-10">Loading...</p>;
-
-  if (!user) return <p className="text-center mt-10">User not found</p>;
 
   return (
     <div className="max-w-3xl mx-auto px-6 py-6">
@@ -40,25 +33,26 @@ const UserCardDetails = () => {
         ← Back
       </button>
 
-      <div>
-        <h1>Name: {user.name}</h1>
-        <p>Email: {user.email}</p>
-        <p>Phone: {user.phone}</p>
-        <p>Company: {user?.company?.name}</p>
-      </div>
+      <div className="bg-blue-50 shadow-md rounded-xl p-6 space-y-4">
+        <h1 className="text-3xl font-bold">{user.name}</h1>
 
-      <div>
-        <h2>Address</h2>
-        <p>
-          {user?.address?.street}, {user?.address?.suite},{" "}
-          {user?.address?.city} - {user?.address?.zipcode}
-        </p>
-      </div>
+        <p><strong>Email:</strong> {user.email}</p>
+        <p><strong>Phone:</strong> {user.phone}</p>
+        <p><strong>Company:</strong> {user.company.name}</p>
 
-      <div>
-        <h2>Geo Location</h2>
-        <p>Latitude: {user?.address?.geo?.lat}</p>
-        <p>Longitude: {user?.address?.geo?.lng}</p>
+        <div>
+          <h2 className="text-xl font-semibold mt-4">Address</h2>
+          <p>
+            {user.address.street}, {user.address.suite},{" "}
+            {user.address.city} - {user.address.zipcode}
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-xl font-semibold mt-4">Geo Location</h2>
+          <p>Latitude: {user.address.geo.lat}</p>
+          <p>Longitude: {user.address.geo.lng}</p>
+        </div>
       </div>
     </div>
   );
