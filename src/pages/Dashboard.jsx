@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import UserCard from "../components/UserCard";
 import { Search } from "lucide-react";
+import CreateUserForm from "../components/CreateUserForm";
 
 const Dashboard = () => {
   const [users, setUsers] = useState([]);
   const [fetching, setFetching] = useState(true);
   const [error, setError] = useState(null)
   const [search, setSearch] = useState("")
+  const [isFormOpen, setIsFormOpen] = useState(false)
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -37,6 +39,11 @@ const Dashboard = () => {
   if(fetching) return <p>fetching user data</p>
   if(error) return <p className="text-red-800">x{error}</p>
 
+// form handling
+const addUser = (newUser) => {
+  setUsers((prev) => [...prev, {id: Date.now(), ...newUser, company:{name: newUser.company},},]);
+}
+
   return (
     <div className="mx-4 justify-center items-center">
 
@@ -58,9 +65,26 @@ const Dashboard = () => {
 
         {/* craete User */}
         <button
+        onClick={()=> setIsFormOpen(true)}
         className="bg-[#213448] text-white px-5 py-2 cursor-pointer rounded-xl"
         >Create User +</button>
       </div>
+
+      {/* if form opens */}
+      {isFormOpen && (
+        <div>
+          <button
+          onClick={()=>setIsFormOpen(false)}
+          className=""
+          >X</button>
+          <CreateUserForm
+          formData={formData}
+          onAddUser={(data)=>{addUser(data);
+            setIsFormOpen(false);
+          }}
+          />
+        </div>
+      )}
 
 
       <h1 className="font-bold text-2xl py-2 ml-4">User Dashboard</h1>
