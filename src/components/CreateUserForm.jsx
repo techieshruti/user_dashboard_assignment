@@ -20,7 +20,7 @@ const CreateUserForm = ({formData, addUser}) => {
     <div>
         <form
         onSubmit={handleSubmit}
-        className="bg-white p-4 rounded-xl shadow-md flex gap-3 flex-wrap"
+        className="flex gap-3 flex-wrap"
         >
             {formData.map((formfields)=>(
                 <input 

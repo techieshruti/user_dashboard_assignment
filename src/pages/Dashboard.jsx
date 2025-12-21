@@ -80,17 +80,19 @@ const addUser = (newUser) => {
 
       {/* if form opens */}
       {isFormOpen && (
-        <div className="fixed">
-          <button
+        <div className="fixed flex items-center z-50 justify-center inset-0">
+          <div className="bg-gray-100 rounded-2xl shadow-xl p-6 w-[90%] max-w-xl relative pointer-events-auto">
+            <button
           onClick={()=>setIsFormOpen(false)}
-          className=""
+          className="absolute top-3 right-8 text-lg font-bold cursor-pointer"
           >X</button>
           <CreateUserForm
           formData={formData}
-          onAddUser={(data)=>{addUser(data);
+          addUser={(data)=>{addUser(data);
             setIsFormOpen(false);
           }}
           />
+          </div>
         </div>
       )}
 
