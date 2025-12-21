@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import UserCard from "../components/UserCard";
+import { Search } from "lucide-react";
 
 const Dashboard = () => {
   const [users, setUsers] = useState([]);
   const [fetching, setFetching] = useState(true);
   const [error, setError] = useState(null)
+  const [search, setSearch] = useState("")
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -27,19 +29,31 @@ const Dashboard = () => {
     fetchUserData();
   },[]);
 
+  // filter Users
+  const filterByUsername = users.filter((user) => 
+  user.name?.toLowerCase().includes(search.toLowerCase())
+  );
+
   if(fetching) return <p>fetching user data</p>
   if(error) return <p className="text-red-800">x{error}</p>
 
   return (
     <div className="mx-4 justify-center items-center">
 
+
       {/* header */}
-      <div className="flex flex-col sm:justify-between mt-4 gap-4 mb-4 sm:flex-row">
-        <div>
-          {/* Search */}
+      <div className="flex flex-col sm:flex-row sm:justify-between mt-4 gap-4 mb-4">
+
+        {/* Search */}
+        <div className="relative max-w-sm w-full">
           <input 
-          className="bg-gray-100 px-8 py-2 rounded-xl border border-[#cae4ef]"
+          value={search}
+          onChange={(e)=>setSearch(e.target.value)}
+          className="w-full bg-gray-100 px-8 py-2 rounded-xl border border-[#cae4ef]"
           type="text" placeholder="Search by Username..."/>
+          <Search 
+          size={18} 
+          className="absolute left-2 top-3 translate-0-y-1/2 text-[#213448]"/>
         </div>
 
         {/* craete User */}
@@ -52,10 +66,13 @@ const Dashboard = () => {
       <h1 className="font-bold text-2xl py-2 ml-4">User Dashboard</h1>
 
       {/* UserCard */}
-      <div className="grid md:grid-cols-4 gap-4 grid-cols-1">
-        {users.map((user)=> (
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {
+        filterByUsername.length > 0 ?(
+        filterByUsername.map((user)=> (
           <UserCard key={user.id} user={user}/>
-        ))}
+        ))) : (<p>No user found</p>)
+      }
       </div>
       
     </div>
