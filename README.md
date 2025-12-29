@@ -3,7 +3,7 @@
 A responsive User Dashboard built using React that fetches users from an API, allows searching, creating new users (client-side), and viewing detailed user information with routing.
 
 ## Deployed 
-Live link:- (https://techieshruti.github.io/user_dashboard_assignment/)
+Live link:- (https://user-dashboard-detailed.netlify.app/)
 
 ## 📸 Screenshots
 <img width="235" height="490" alt="UserForm" src="https://github.com/user-attachments/assets/2830dfb2-212e-458f-bdb5-01b3d37a6288" />
