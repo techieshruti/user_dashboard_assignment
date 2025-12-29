@@ -6,11 +6,7 @@ A responsive User Dashboard built using React that fetches users from an API, al
 Live link:- (https://user-dashboard-detailed.netlify.app/)
 
 ## 📸 Screenshots
-<img width="235" height="490" alt="UserForm" src="https://github.com/user-attachments/assets/2830dfb2-212e-458f-bdb5-01b3d37a6288" />
-<img width="235" height="490" alt="UserForm" src="https://github.com/user-attachments/assets/bf958f93-78e7-4f34-8e06-75b32de2304c" />
-<img width="1349" height="606" alt="Web_Dashboard" src="https://github.com/user-attachments/assets/ec924dae-39d7-4595-a0bc-aab2394fd188" />
-<img width="1339" height="604" alt="Web_UserForm" src="https://github.com/user-attachments/assets/41fbcc15-777f-4967-9089-c78e5b5bc433" />
-
+<img width="300" height="250" alt="Web_Dashboard" src="https://github.com/user-attachments/assets/ec924dae-39d7-4595-a0bc-aab2394fd188" />  <img width="300" height="250" alt="Web_UserForm" src="https://github.com/user-attachments/assets/41fbcc15-777f-4967-9089-c78e5b5bc433" />  <img width="300" height="250" alt="UserCardDetails" src="https://github.com/user-attachments/assets/f84e55c6-9001-4aaa-b32f-b7a90138fd49" />
 
 
 ## Features
